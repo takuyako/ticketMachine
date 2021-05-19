@@ -1,9 +1,21 @@
-public class Product {
-    String name_;
-    int price_;
+public class Product implements Cloneable {
+    String name;
+    int price;
 
     public Product(String name, int price){
-        name_ = name;
-        price_ = price;
+        this.name = name;
+        this.price = price;
+    }
+
+    public Product clone() {
+        Product product = null;
+        // CloneNotSupportedExceptionを返す可能性があるので例外処理が必要
+        try {
+            // Object型で返ってくるのでキャストが必要
+            product = (Product)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return product;
     }
 }

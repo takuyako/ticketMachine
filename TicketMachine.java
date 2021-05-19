@@ -1,26 +1,53 @@
 public class TicketMachine {
-    int totalPrice;
+    static ProductList productList;
+    CartList cartList;
 
-    public ProductList showList() {
-        ProductList productList;
-        return productList;
+    public void showAllList() {
+        productList.showAllList();
     }
 
-    public Product showProduct() {
-        Product product;
-        return product;
+    public void showMainList() {
+        productList.showMainList();
     }
 
-    public Product addCart() {
-        Product product;
-        return product;
+    public void showSideList() {
+        productList.showSideList();
     }
 
-    public int showPrice() {
-        Product product;
+    public void addCart(Product product) {
+        cartList.addCart(product);
+    }
+
+    public int showTotalPrice(){
+        int totalPrice = cartList.showTotalPrice();
         return totalPrice;
+    }
 
-    public int PayMoney(int totalPrice) {
-        Product product;
-        return product;
+    public int payMoney(int payment) {
+        int change = payment - cartList.totalPrice;
+        System.out.println(change);
+        return change;
+    }
+
+    public TicketMachine(){
+        productList = new ProductList();
+        cartList = new CartList();
+    }
+
+    // int totalPrice = cartList.showTotalPrice();
+    // ticketMachine.payMoney(1000, totalPrice);
+
+    public static void main(String[] args){
+        TicketMachine tm = new TicketMachine();
+        tm.showAllList();
+        tm.showMainList();
+        tm.showSideList();
+        Product product1 = productList.getProduct(0);
+        Product product2 = productList.getProduct(4);
+        tm.addCart(product1);
+        tm.addCart(product2);
+        tm.showTotalPrice();
+        tm.payMoney(1000);
+    }
+
 }
