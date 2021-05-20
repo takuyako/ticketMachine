@@ -11,7 +11,7 @@ public class ProductList {
 
     public void showMainList() {
         for(Product pd : productList){
-            if(pd.name.equals("牛丼") || pd.name.equals("豚丼") || pd.name.equals("カレー")){
+            if(pd instanceof MainProduct){
                 System.out.println(pd.name + " " + pd.price);
             }
         }
@@ -19,7 +19,7 @@ public class ProductList {
 
     public void showSideList() {
         for(Product pd : productList){
-            if(pd.name.equals("ポテトサラダ") || pd.name.equals("グリーンサラダ") || pd.name.equals("味噌汁") || pd.name.equals("豚汁")){
+            if(pd instanceof SideProduct){
                 System.out.println(pd.name + " " + pd.price);
             }
         }
@@ -31,12 +31,12 @@ public class ProductList {
 
     public ProductList(){
         productList = new ArrayList<>();
-        productList.add(new Product("牛丼", 380));
-        productList.add(new Product("豚丼", 400));
-        productList.add(new Product("カレー", 450));
-        productList.add(new Product("ポテトサラダ", 200));
-        productList.add(new Product("グリーンサラダ", 150));
-        productList.add(new Product("味噌汁", 50));
-        productList.add(new Product("豚汁", 150));
+        productList.add(new MainProduct("牛丼", 380));
+        productList.add(new MainProduct("豚丼", 400));
+        productList.add(new MainProduct("カレー", 450));
+        productList.add(new SideProduct("ポテトサラダ", 200));
+        productList.add(new SideProduct("グリーンサラダ", 150));
+        productList.add(new SideProduct("味噌汁", 50));
+        productList.add(new SideProduct("豚汁", 150));
     }
 }

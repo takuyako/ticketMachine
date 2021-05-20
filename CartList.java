@@ -7,14 +7,14 @@ public class CartList {
     int totalPrice;
 
     public void addCart(Product product) {
-        Size size = new Size();
+
         Product cartProduct = product.clone();
+        cartProduct.setPrice(cartProduct);
         cartList.add(cartProduct);
 
-        if (cartProduct.name.equals("牛丼") || cartProduct.name.equals("豚丼") || cartProduct.name.equals("カレー")) {
-            size.changePrice(cartProduct);
+        for(Product cartP : cartList){
+            System.out.println(cartP.name + " " + cartP.price);
         }
-        System.out.println(cartProduct.name + " " + cartProduct.price);
     }
 
     public int showTotalPrice() {
@@ -26,9 +26,5 @@ public class CartList {
         totalPrice = sum;
         return sum;
     }
-
-    // public CartList(){
-    // ArrayList<Product> cartList = new ArrayList<>();
-    // }
 
 }

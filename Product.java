@@ -1,6 +1,9 @@
-public class Product implements Cloneable {
+public abstract class Product implements Cloneable {
     String name;
     int price;
+    Product cartProduct;
+
+    public abstract Product setPrice(Product cartProduct);
 
     public Product(String name, int price){
         this.name = name;
