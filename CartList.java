@@ -4,7 +4,7 @@ public class CartList {
     ArrayList<Product> cartList = new ArrayList<>();;
     Product product;
     Product cartProduct;
-    int totalPrice;
+    private int totalPrice;
 
     public void addCart(Product product) {
 
@@ -13,18 +13,21 @@ public class CartList {
         cartList.add(cartProduct);
 
         for(Product cartP : cartList){
-            System.out.println(cartP.name + " " + cartP.price);
+            System.out.println(cartP.getName() + " " + cartP.getPrice());
         }
     }
 
     public int showTotalPrice() {
         int sum = 0;
         for (Product cartProduct : cartList) {
-            sum += cartProduct.price;
+            sum += cartProduct.getPrice();
         }
         System.out.println(sum);
         totalPrice = sum;
         return sum;
     }
 
+    public int getTotalPrice(){
+        return this.totalPrice;
+    }
 }

@@ -24,7 +24,7 @@ public class TicketMachine {
     }
 
     public int payMoney(int payment) {
-        int change = payment - cartList.totalPrice;
+        int change = payment - cartList.getTotalPrice();
         System.out.println(change);
         return change;
     }

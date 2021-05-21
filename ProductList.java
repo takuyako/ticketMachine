@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class ProductList {
-    ArrayList<Product> productList;
+    private ArrayList<Product> productList;
 
     public void showAllList() {
         for(Product pd : productList){
-        System.out.println(pd.name + " " + pd.price);
+        System.out.println(pd.getName() + " " + pd.getPrice());
         }
     }
 
     public void showMainList() {
         for(Product pd : productList){
             if(pd instanceof MainProduct){
-                System.out.println(pd.name + " " + pd.price);
+                System.out.println(pd.getName() + " " + pd.getPrice());
             }
         }
     }
@@ -20,7 +20,7 @@ public class ProductList {
     public void showSideList() {
         for(Product pd : productList){
             if(pd instanceof SideProduct){
-                System.out.println(pd.name + " " + pd.price);
+                System.out.println(pd.getName() + " " + pd.getPrice());
             }
         }
     }

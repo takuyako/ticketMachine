@@ -1,6 +1,6 @@
 public abstract class Product implements Cloneable {
-    String name;
-    int price;
+    private String name;
+    private int price;
     Product cartProduct;
 
     public abstract Product setPrice(Product cartProduct);
@@ -20,5 +20,21 @@ public abstract class Product implements Cloneable {
             e.printStackTrace();
         }
         return product;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public int getPrice(){
+        return this.price;
+    }
+
+    public void setPrice(int price){
+        this.price = price;
     }
 }

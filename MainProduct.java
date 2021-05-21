@@ -10,15 +10,20 @@ public class MainProduct extends Product  {
             System.out.println("サイズはどれですか？");
             String size = sc.next();
             if (size.equals("S")) {
-                cartProduct.price -= 50;
-                cartProduct.name += "S";
+                int cartProductPrice = cartProduct.getPrice() - 50;
+                cartProduct.setPrice(cartProductPrice);
+                String cartProductName = cartProduct.getName() + "S";
+                cartProduct.setName(cartProductName);
                 okFlag = true;
             } else if (size.equals("L")) {
-                cartProduct.price += 100;
-                cartProduct.name += "L";
+                int cartProductPrice = cartProduct.getPrice() + 100;
+                cartProduct.setPrice(cartProductPrice);
+                String cartProductName = cartProduct.getName() + "L";
+                cartProduct.setName(cartProductName);
                 okFlag = true;
             } else if (size.equals("M")) {
-                cartProduct.name += "M";
+                String cartProductName = cartProduct.getName() + "M";
+                cartProduct.setName(cartProductName);
                 okFlag = true;
             } else {
                 System.out.println("もう一度入力してください");
