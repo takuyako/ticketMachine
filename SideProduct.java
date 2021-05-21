@@ -1,5 +1,6 @@
 public class SideProduct extends Product {
 
+    @Override
     public Product setPrice(Product cartProduct) {
         return cartProduct;
     }

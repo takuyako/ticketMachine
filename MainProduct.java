@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MainProduct extends Product  {
     Scanner sc = new Scanner(System.in);
 
-
+    @Override
     public Product setPrice(Product cartProduct) {
         boolean okFlag = false;
         while (!(okFlag)) {
